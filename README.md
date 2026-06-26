@@ -1,41 +1,9 @@
-# Smart Cover Letter Generator
+# Streamlit AI Cover Letter Generator
 
-FastAPI service that streams a tailored cover letter using Gemini.
+A web-based interface that leverages open-source LLMs to instantly generate tailored, ATS-optimized cover letters based on specific job descriptions and applicant profiles.
 
-## Setup
-
-```bash
-pip install -r requirements.txt
-cp .env.example .env
-# Add your Gemini API key to .env
-```
-
-## Run
-
-```bash
-uvicorn app.main:app --reload
-```
-
-## Test (in a second terminal)
-
-```bash
-curl -N -X POST http://localhost:8000/generate \
-  -H "Content-Type: application/json" \
-  -d '{
-    "job_title": "Python Developer",
-    "company_name": "Systems Ltd",
-    "job_description": "Looking for a Python developer with FastAPI experience.",
-    "candidate_background": "Final-year CS student, built 3 AI projects.",
-    "tone": "confident"
-  }'
-```
-
-## Health check
-
-```bash
-curl http://localhost:8000/health
-```
-
-## Interactive API docs
-
-Open http://localhost:8000/docs in your browser.
+## Features & Implementation
+* **Dummy Code Base:** Core prompt setup and API routing templates provided by skillSYNC.
+* **Web UI Setup:** Configured and deployed a clean, user-friendly frontend workspace using Streamlit.
+* **Model Testing:** Implemented API infrastructure to test token-by-token live text streaming using Groq's `llama-3.3-70b-versatile` model.
+* **Input Mapping:** Successfully tested dynamic prompt variations supporting user-selected tones (confident, formal, conversational) and local applicant datasets.
